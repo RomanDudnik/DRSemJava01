@@ -29,7 +29,7 @@ public class Main {
 
         // 4. Найти все некратные n числа в диапазоне от Short.MIN_VALUE до i и сохранить в массив m2
         int [] m2 = nonMultArray(i , n);
-        System.out.println("Размер массива m1 = " + m2.length);
+        System.out.println("Размер массива m2 = " + m2.length);
 
     }
     static int randNum(int min,int max) {
