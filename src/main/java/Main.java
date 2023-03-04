@@ -12,22 +12,22 @@ import java.util.Random;
 
 public class Main {
     public static void main (String[] args) {
-        //        1. Выбросить случайное целое число в диапазоне от 0 до 2000 и сохранить в i
+        // 1. Выбросить случайное целое число в диапазоне от 0 до 2000 и сохранить в i
         int min = 0;
         int max = 2000;
         int i = randNum(min, max);
         System.out.println("Ваше случайное число - " +i);
 
-        //        2. Посчитать и сохранить в n номер старшего значащего бита выпавшего числа
+        // 2. Посчитать и сохранить в n номер старшего значащего бита выпавшего числа
 //        int bin = Integer.toBinaryString(i).length();
         short n = bigBit(i);
         System.out.println("Старший значащий бит - " +n);
 
-        //        3. Найти все кратные n числа в диапазоне от i до Short.MAX_VALUE сохранить в массив m1
+        // 3. Найти все кратные n числа в диапазоне от i до Short.MAX_VALUE сохранить в массив m1
         int [] m1 = multArray(i , n);
         System.out.println("Размер массива m1 = " + m1.length);
 
-        //        4. Найти все некратные n числа в диапазоне от Short.MIN_VALUE до i и сохранить в массив m2
+        // 4. Найти все некратные n числа в диапазоне от Short.MIN_VALUE до i и сохранить в массив m2
         int [] m2 = nonMultArray(i , n);
         System.out.println("Размер массива m1 = " + m2.length);
 
