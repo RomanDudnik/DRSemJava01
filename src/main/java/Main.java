@@ -31,6 +31,7 @@ public class Main {
         int [] m2 = nonMultArray(i , n);
         System.out.println("Размер массива m2 = " + m2.length);
 
+
     }
     static int randNum(int min,int max) {
         Random random = new Random();
@@ -67,14 +68,14 @@ public class Main {
 
     static int[] nonMultArray(int num, short bit) {
         int count = 0;
-        for(int i = num; i <= Short.MIN_VALUE; i++) {
+        for(int i = Short.MIN_VALUE; i <= num; i++) {
             if(i % bit != 0) {
                 count++;
             }
         }
         int[] arr = new int[count];
         count = 0;
-        for(int j = num; j <= Short.MIN_VALUE; j++) {
+        for(int j = Short.MIN_VALUE; j <= num; j++) {
             if(j % bit != 0) {
                 arr[count] = j;
                 count++;
