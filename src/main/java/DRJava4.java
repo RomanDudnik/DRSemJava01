@@ -34,28 +34,6 @@ public class DRJava4 {
 
     }
 
-    private static void getData() {
-        String command;
-        System.out.println("\nВведите '1' для ввода новой записи\n Введите '2' для завершения ввода данных\n");
-        command = myScanner.nextLine();
-        while (command.equals("1")) {
-            contacts.add(getRecord());
-            System.out.println("\nВведите '1' для ввода новой записи\n Введите '2' для завершения ввода данных\n");
-            command = myScanner.nextLine();
-        }
-    }
-    private static void getSort() {
-        String command;
-        System.out.println("\nВведите '1' для сортировки по возросту и полу\n Введите '2' для выхода");
-        command = myScanner.nextLine();
-        while (command.equals("1")) {
-            sortAgeContacts(contacts);
-            sortGenContacts(contacts);
-            System.out.println("\nВведите '1' для сортировки по возросту и полу\n Введите '2' для выхода");
-            command = myScanner.nextLine();
-        }
-    }
-
     private static ArrayList<String> getRecord() {
         ArrayList<String> newRecord = new ArrayList<>();
         System.out.println("Введите Фамилию: ");
@@ -117,6 +95,28 @@ public class DRJava4 {
         contacts.sort(cmprGender);
         System.out.println("\nСортировка по полу: ");
         printContacts();
+    }
+
+    private static void getData() {
+        String command;
+        System.out.println("\nВведите '1' для ввода новой записи\n Введите '2' для завершения ввода данных\n");
+        command = myScanner.nextLine();
+        while (command.equals("1")) {
+            contacts.add(getRecord());
+            System.out.println("\nВведите '1' для ввода новой записи\n Введите '2' для завершения ввода данных\n");
+            command = myScanner.nextLine();
+        }
+    }
+    private static void getSort() {
+        String command;
+        System.out.println("\nВведите '1' для сортировки по возросту и полу\n Введите '2' для выхода");
+        command = myScanner.nextLine();
+        while (command.equals("1")) {
+            sortAgeContacts(contacts);
+            sortGenContacts(contacts);
+            System.out.println("\nВведите '1' для сортировки по возросту и полу\n Введите '2' для выхода");
+            command = myScanner.nextLine();
+        }
     }
 
 }
