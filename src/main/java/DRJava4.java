@@ -19,17 +19,6 @@ public class DRJava4 {
         getData();
         System.out.println("Список контактов: ");
         printContacts();
-        Comparator<ArrayList<String>> cmpr = new Comparator<ArrayList<String>>() {
-            @Override
-            public int compare(ArrayList<String> t1, ArrayList<String> t2) {
-                if (Integer.parseInt(t1.get(3)) > Integer.parseInt(t2.get(3))) return 1;
-                else if (Integer.parseInt(t1.get(3)) < Integer.parseInt(t2.get(3))) return -1;
-                else return 0;
-
-            }
-        };
-        contacts.sort(cmpr);
-
         getSort();
 
     }
