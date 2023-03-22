@@ -32,7 +32,7 @@ public class DRJava5 {
         actionsRecord(phoneBook);
         System.out.println("Повтор имени по запросу");
         nameSum(phoneBook);
-        System.out.println("Повтор имён:");
+        System.out.println("Повтор имён по популярности:");
         allNameSum(phoneBook);
     }
 
@@ -112,7 +112,7 @@ public class DRJava5 {
         Set<String> set = new HashSet<>(names);
         names.clear();
         names.addAll(set);
-        System.out.println(set);
+        Collections.sort(names, Collections.reverseOrder());
+        System.out.println(names);
     }
-
 }
