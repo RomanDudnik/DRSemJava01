@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 import java.util.Map;
@@ -12,7 +13,7 @@ import java.util.Map;
 public class DRJava5 {
     static Scanner myScanner = new Scanner(System.in);
     public static void main(String[] args) {
-        Map<Integer, String> phoneBook = new HashMap<>();
+        HashMap<Integer, String> phoneBook = new HashMap<>();
         phoneBook.put(6845923, "Иван Иванов");
         phoneBook.put(7563212, "Светлана Петрова");
         phoneBook.put(3241592, "Иван Иванов");
@@ -33,10 +34,11 @@ public class DRJava5 {
         phoneBook.put(1234547, "Петр Петин");
         phoneBook.put(5568952, "Иван Ежов");
         actionsRecord(phoneBook);
+        nameSum(phoneBook);
 
     }
 
-    private static Map<Integer, String> actionsRecord(Map<Integer, String> pb) {
+    private static HashMap<Integer, String> actionsRecord(HashMap<Integer, String> pb) {
         input:
         while (true) {
             System.out.print("\n Что требуется?\n" +
@@ -75,6 +77,19 @@ public class DRJava5 {
             }
         }
         return pb;
+    }
+    private static void nameSum (HashMap<Integer, String> pb) {
+        System.out.println("Введите имя : ");
+        String name = myScanner.nextLine();
+        int index = 0;
+        for (var item: pb.values()) {
+            String tmp = item;
+            tmp = tmp.substring(0, tmp.lastIndexOf(" "));
+            if (tmp.equals(name)) {
+                index += 1;
+            }
+        }
+        System.out.println(name + " есть " + index + " Раз/раза");
     }
 
 }
