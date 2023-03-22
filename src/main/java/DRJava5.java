@@ -13,7 +13,6 @@ public class DRJava5 {
         HashMap<Integer, String> phoneBook = new HashMap<>();
         phoneBook.put(6845923, "Иван Иванов");
         phoneBook.put(7563212, "Светлана Петрова");
-        phoneBook.put(3241592, "Иван Иванов");
         phoneBook.put(7535463, "Кристина Белова");
         phoneBook.put(3426877, "Анна Мусина");
         phoneBook.put(1578312, "Анна Крутова");
@@ -105,7 +104,10 @@ public class DRJava5 {
                 }
 
             }
-            names.add(tmp + " есть " + index + " Раз/раза");
+            if (index > 1) {
+                names.add(index + " Раз/раза" + " есть " + tmp);
+            }
+
 
         }
         Set<String> set = new HashSet<>(names);
@@ -114,6 +116,5 @@ public class DRJava5 {
         System.out.println(set);
 
     }
-
 
 }
