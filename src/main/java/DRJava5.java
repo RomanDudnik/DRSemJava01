@@ -34,8 +34,10 @@ public class DRJava5 {
         phoneBook.put(1234547, "Петр Петин");
         phoneBook.put(5568952, "Иван Ежов");
         actionsRecord(phoneBook);
+        System.out.println("Повтор имени");
         nameSum(phoneBook);
-
+        System.out.println("Повтор имён:");
+        allNameSum(phoneBook);
     }
 
     private static HashMap<Integer, String> actionsRecord(HashMap<Integer, String> pb) {
@@ -89,7 +91,24 @@ public class DRJava5 {
                 index += 1;
             }
         }
-        System.out.println(name + " есть " + index + " Раз/раза");
+        System.out.println(name + " есть " + index + " Раз/раза \n");
+    }
+    private static void allNameSum (HashMap<Integer, String> pb) {
+
+        for (var item: pb.values()) {
+            String tmp = item;
+            tmp = tmp.substring(0, tmp.lastIndexOf(" "));
+            int index = 0;
+            for (var item1: pb.values()) {
+                String tmp1 = item1;
+                tmp1 = tmp1.substring(0, tmp1.lastIndexOf(" "));
+                if (tmp.equals(tmp1)) {
+                    index += 1;
+                }
+            }
+            System.out.println(tmp + " есть " + index + " Раз/раза");
+        }
+
     }
 
 }
