@@ -76,6 +76,7 @@ public class DRJava5 {
         }
         return pb;
     }
+
     private static void nameSum (HashMap<Integer, String> pb) {
         System.out.println("Введите имя : ");
         String name = myScanner.nextLine();
@@ -89,6 +90,7 @@ public class DRJava5 {
         }
         System.out.println(name + " есть " + index + " Раз/раза \n");
     }
+
     private static void allNameSum (HashMap<Integer, String> pb) {
         ArrayList<String> names = new ArrayList<>();
         for (var item: pb.values()) {
@@ -107,14 +109,11 @@ public class DRJava5 {
             if (index > 1) {
                 names.add(index + " Раз/раза" + " есть " + tmp);
             }
-
-
         }
         Set<String> set = new HashSet<>(names);
         names.clear();
         names.addAll(set);
-        System.out.println(set);
-
+        System.out.println(set.stream());
     }
 
 }
