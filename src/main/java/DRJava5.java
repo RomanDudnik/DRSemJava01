@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Scanner;
-import java.util.Map;
+import java.util.*;
 
 /*
     Реализуйте структуру телефонной книги с помощью HashMap, учитывая, что 1 человек может иметь несколько телефонов.
@@ -34,7 +31,7 @@ public class DRJava5 {
         phoneBook.put(1234547, "Петр Петин");
         phoneBook.put(5568952, "Иван Ежов");
         actionsRecord(phoneBook);
-        System.out.println("Повтор имени");
+        System.out.println("Повтор имени по запросу");
         nameSum(phoneBook);
         System.out.println("Повтор имён:");
         allNameSum(phoneBook);
@@ -94,7 +91,7 @@ public class DRJava5 {
         System.out.println(name + " есть " + index + " Раз/раза \n");
     }
     private static void allNameSum (HashMap<Integer, String> pb) {
-
+        ArrayList<String> names = new ArrayList<>();
         for (var item: pb.values()) {
             String tmp = item;
             tmp = tmp.substring(0, tmp.lastIndexOf(" "));
@@ -104,11 +101,19 @@ public class DRJava5 {
                 tmp1 = tmp1.substring(0, tmp1.lastIndexOf(" "));
                 if (tmp.equals(tmp1)) {
                     index += 1;
+
                 }
+
             }
-            System.out.println(tmp + " есть " + index + " Раз/раза");
+            names.add(tmp + " есть " + index + " Раз/раза");
+
         }
+        Set<String> set = new HashSet<>(names);
+        names.clear();
+        names.addAll(set);
+        System.out.println(set);
 
     }
+
 
 }
