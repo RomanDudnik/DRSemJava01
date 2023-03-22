@@ -76,7 +76,6 @@ public class DRJava5 {
         }
         return pb;
     }
-
     private static void nameSum (HashMap<Integer, String> pb) {
         System.out.println("Введите имя : ");
         String name = myScanner.nextLine();
@@ -113,7 +112,7 @@ public class DRJava5 {
         Set<String> set = new HashSet<>(names);
         names.clear();
         names.addAll(set);
-        System.out.println(set.stream());
+        System.out.println(set);
     }
 
 }
