@@ -74,8 +74,8 @@ class MySet {
         ArrayList<Integer> output = new ArrayList<>();
         for (int k:
                 mySet.keySet()) {
-            output.add(k-1);
-            if (k == element) break;
+            output.add(k);
+            if (k == element - 1) break;
         }
         return output;
     }
