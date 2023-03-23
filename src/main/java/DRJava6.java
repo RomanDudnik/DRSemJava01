@@ -36,7 +36,7 @@ public class DRJava6 {
         // вывести ключи(у нас там эл-ты) в виде списка
         System.out.println(ms.toList());
         // вывести эл-ты списка до названной переменной
-        System.out.println(ms.toListUpToElement(2));
+        System.out.println(ms.toListUpToElement(4));
 
 
     }
@@ -74,7 +74,7 @@ class MySet {
         ArrayList<Integer> output = new ArrayList<>();
         for (int k:
                 mySet.keySet()) {
-            output.add(k);
+            output.add(k-1);
             if (k == element) break;
         }
         return output;
